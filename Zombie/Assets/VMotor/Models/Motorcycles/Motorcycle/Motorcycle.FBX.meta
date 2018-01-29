@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: e76d71e3a04102942a7b2cccef398aa4
+timeCreated: 18446744011573954816
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: body
+    100002: chassis
+    100004: Chassis2
+    100006: forks_fron
+    100008: forks_rear
+    100010: handlebars
+    100012: //RootNode
+    100014: mudguard
+    100016: wheel_fron
+    100018: wheel_rear
+    100020: windows
+    100022: windows01
+    100024: Body
+    100026: body2
+    100028: body3
+    100030: body4
+    100032: body5
+    100034: glass1
+    100036: glass2
+    100038: Rear
+    100040: Steer
+    100042: WheelBack
+    100044: WheelFront
+    400000: body
+    400002: chassis
+    400004: Chassis2
+    400006: forks_fron
+    400008: forks_rear
+    400010: handlebars
+    400012: //RootNode
+    400014: mudguard
+    400016: wheel_fron
+    400018: wheel_rear
+    400020: windows
+    400022: windows01
+    400024: Body
+    400026: body2
+    400028: body3
+    400030: body4
+    400032: body5
+    400034: glass1
+    400036: glass2
+    400038: Rear
+    400040: Steer
+    400042: WheelBack
+    400044: WheelFront
+    2300000: body
+    2300002: chassis
+    2300004: Chassis2
+    2300006: forks_fron
+    2300008: forks_rear
+    2300010: handlebars
+    2300012: mudguard
+    2300014: wheel_fron
+    2300016: wheel_rear
+    2300018: windows
+    2300020: windows01
+    2300022: Body
+    2300024: body2
+    2300026: body3
+    2300028: body4
+    2300030: body5
+    2300032: glass1
+    2300034: glass2
+    2300036: Rear
+    2300038: Steer
+    2300040: WheelBack
+    2300042: WheelFront
+    3300000: body
+    3300002: chassis
+    3300004: Chassis2
+    3300006: forks_fron
+    3300008: forks_rear
+    3300010: handlebars
+    3300012: mudguard
+    3300014: wheel_fron
+    3300016: wheel_rear
+    3300018: windows
+    3300020: windows01
+    3300022: Body
+    3300024: body2
+    3300026: body3
+    3300028: body4
+    3300030: body5
+    3300032: glass1
+    3300034: glass2
+    3300036: Rear
+    3300038: Steer
+    3300040: WheelBack
+    3300042: WheelFront
+    4300000: forks_rear
+    4300002: wheel_rear
+    4300004: handlebars
+    4300006: forks_fron
+    4300008: mudguard
+    4300010: wheel_fron
+    4300012: chassis
+    4300014: windows01
+    4300016: Chassis2
+    4300018: body
+    4300020: windows
+    4300022: Rear
+    4300024: WheelBack
+    4300026: Steer
+    4300028: body4
+    4300030: body5
+    4300032: WheelFront
+    4300034: body2
+    4300036: glass2
+    4300038: body3
+    4300040: Body
+    4300042: glass1
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

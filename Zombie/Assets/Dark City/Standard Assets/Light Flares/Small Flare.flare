@@ -12,19 +12,19 @@ Flare:
   - m_ImageIndex: 0
     m_Position: 0
     m_Size: 10
-    m_Color: {r: 1, g: 1, b: 1, a: 0}
+    m_Color: {r: 0.5895523, g: 0, b: 0, a: 0}
     m_UseLightColor: 1
     m_Rotate: 0
     m_Zoom: 0
     m_Fade: 1
   - m_ImageIndex: 2
     m_Position: 0
-    m_Size: 40
-    m_Color: {r: 0.24875258, g: 0.24875258, b: 0.24875258, a: 0}
-    m_UseLightColor: 1
+    m_Size: 20
+    m_Color: {r: 0.8358209, g: 0, b: 0, a: 0}
+    m_UseLightColor: 0
     m_Rotate: 0
-    m_Zoom: 0
-    m_Fade: 1
+    m_Zoom: 1
+    m_Fade: 0
   m_UseFog: 1
 --- !u!1002 &12100001
 EditorExtensionImpl:
