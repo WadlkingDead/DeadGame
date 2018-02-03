@@ -95,7 +95,7 @@ public class Nav : MonoBehaviour {
     {
         if (Vector3.Distance(transform.position, targetTrans.position) < targetDistance)
         {
-            Invoke("SelfBorn", Random.Range(0f, 2f));
+            Invoke("SelfBorn", Random.Range(0f, 5f));
         }
         
     }
