@@ -1,4 +1,4 @@
-
+/*
 #pragma strict
 
 @CustomEditor (TiltShift)
@@ -70,3 +70,4 @@ class TiltShiftEditor extends Editor
     	serObj.ApplyModifiedProperties();
     }
 }
+*/

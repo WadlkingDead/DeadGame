@@ -1,4 +1,4 @@
-
+/*
 #pragma strict
 
 @CustomEditor (DepthOfField34)
@@ -141,4 +141,4 @@ class DepthOfField34Editor extends Editor
     	    	
     	serObj.ApplyModifiedProperties();
     }
-}
+}*/

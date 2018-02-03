@@ -1,4 +1,4 @@
-
+/*
 #pragma strict
 
 @CustomEditor (AntialiasingAsPostEffect)
@@ -63,3 +63,4 @@ class AntialiasingAsPostEffectEditor extends Editor
     	serObj.ApplyModifiedProperties();
     }
 }
+*/
