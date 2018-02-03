@@ -272,7 +272,7 @@ public class MotorControl : MonoBehaviour
         {
             if (!switchGear.isPlaying)
             {
-                switchGear.GetComponent<AudioSource>().Play();
+                //switchGear.GetComponent<AudioSource>().Play();
             }
 
             currentGear++;
@@ -296,7 +296,7 @@ public class MotorControl : MonoBehaviour
         {
             if (!switchGear.isPlaying)
             {
-                switchGear.GetComponent<AudioSource>().Play();
+                //switchGear.GetComponent<AudioSource>().Play();
             }
 
             currentGear--;
@@ -538,7 +538,7 @@ public class MotorControl : MonoBehaviour
 
                 if (!nitro.isPlaying)
                 {
-                    nitro.GetComponent<AudioSource>().Play();
+                    //nitro.GetComponent<AudioSource>().Play();
                    
                 }
                 curTorque = powerShift > 0 ? shiftTorque : torque;
@@ -598,7 +598,7 @@ public class MotorControl : MonoBehaviour
                         Particle[currentWheel] = Instantiate(brakeParticle, w.transform.position, Quaternion.identity) as GameObject;
                         Particle[currentWheel].name = "WheelParticle";
                         Particle[currentWheel].transform.parent = transform;
-                        Particle[currentWheel].AddComponent<AudioSource>().clip = brakeSound;
+                        //Particle[currentWheel].AddComponent<AudioSource>().clip = brakeSound;
 
                     }
 
@@ -611,10 +611,10 @@ public class MotorControl : MonoBehaviour
                         if ((accel < 0.0f) || ((brake || brackF > 3.0f) && (w == wheels[1])))
                         {
 
-                            if (!Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
-                                Particle[currentWheel].GetComponent<AudioSource>().Play();
+                            //if (!Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
+                            //    Particle[currentWheel].GetComponent<AudioSource>().Play();
                             pc.emit = true;
-                            Particle[currentWheel].GetComponent<AudioSource>().volume = Mathf.Clamp((speed / 25), 0, 1.0f);
+                            //Particle[currentWheel].GetComponent<AudioSource>().volume = Mathf.Clamp((speed / 25), 0, 1.0f);
 
                         }
                     }
@@ -622,7 +622,7 @@ public class MotorControl : MonoBehaviour
                     {
 
                         pc.emit = false;
-                        Particle[currentWheel].GetComponent<AudioSource>().volume = Mathf.Lerp(Particle[currentWheel].GetComponent<AudioSource>().volume, 0, 0.1f);
+                        //Particle[currentWheel].GetComponent<AudioSource>().volume = Mathf.Lerp(Particle[currentWheel].GetComponent<AudioSource>().volume, 0, 0.1f);
                     }
 
                 }

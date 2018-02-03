@@ -75,8 +75,8 @@ public class MotorAnimation : MonoBehaviour
             {
 
 
-                player.GetComponent<AudioSource>().Play();
-                hardcrash.GetComponent<AudioSource>().Play();
+                //player.GetComponent<AudioSource>().Play();
+                //hardcrash.GetComponent<AudioSource>().Play();
                 player.parent = null;
 
             }
