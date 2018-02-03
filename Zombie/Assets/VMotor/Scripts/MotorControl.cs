@@ -223,11 +223,11 @@ public class MotorControl : MonoBehaviour
 
 
         // shortcut to audioSource should be engine sound, if null then no engine sound.
-        audioSource = (AudioSource)GetComponent(typeof(AudioSource));
-        if (audioSource == null)
-        {
-            Debug.Log("No audio source, add one to the motor with looping engine noise (but can be turned off");
-        }
+        //audioSource = (AudioSource)GetComponent(typeof(AudioSource));
+        //if (audioSource == null)
+        //{
+        //    Debug.Log("No audio source, add one to the motor with looping engine noise (but can be turned off");
+        //}
         rig = GetComponent<Rigidbody>();
 
         tempPos = transform.position;
@@ -742,13 +742,13 @@ public class MotorControl : MonoBehaviour
 
 
         // if we have an audiosource (motorsound) adjust pitch using rpm        
-        if (audioSource != null)
-        {
-            // calculate pitch (keep it within reasonable bounds)
-            float pitch = Mathf.Clamp(1.0f + ((motorRPM - idleRPM) / (shiftUpRPM - idleRPM)), 1.0f, 10.0f);
-            audioSource.pitch = pitch;
-            audioSource.volume = Mathf.MoveTowards(audioSource.volume, 1.0f, 0.02f);
-        }
+        //if (audioSource != null)
+        //{
+        //    // calculate pitch (keep it within reasonable bounds)
+        //    float pitch = Mathf.Clamp(1.0f + ((motorRPM - idleRPM) / (shiftUpRPM - idleRPM)), 1.0f, 10.0f);
+        //    audioSource.pitch = pitch;
+        //    audioSource.volume = Mathf.MoveTowards(audioSource.volume, 1.0f, 0.02f);
+        //}
 
         if (crash)
         {
