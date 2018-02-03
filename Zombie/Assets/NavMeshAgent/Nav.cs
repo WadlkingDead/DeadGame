@@ -88,6 +88,7 @@ public class Nav : MonoBehaviour {
     {
         anim.SetFloat(moveSpeedID, -2);
         isBorn = true;
+        FindCar();
     }
 
 
