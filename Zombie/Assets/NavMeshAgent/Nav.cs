@@ -88,13 +88,26 @@ public class Nav : MonoBehaviour {
     {
         anim.SetFloat(moveSpeedID, -2);
         isBorn = true;
-        FindCar();
+        Invoke("FindCar", 2f);
     }
 
 
     void FindCar()
     {
         SetDestination(targetTrans.position);
+    }
+
+    public void PlayIdel()
+    {
+        anim.SetFloat(moveSpeedID, 0);
+    }
+    public void PlayWalk()
+    {
+        anim.SetFloat(moveSpeedID, 0.5f);
+    }
+    public void PlayRun()
+    {
+        anim.SetFloat(moveSpeedID, 1f);
     }
 
     void Attack()
