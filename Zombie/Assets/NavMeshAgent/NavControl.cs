@@ -5,17 +5,24 @@ using UnityEngine;
 public class NavControl : MonoBehaviour {
 
     Nav[] zombies;
-    void Start()
+    void Awake()
     {
         zombies = FindObjectsOfType<Nav>();
     
     }
 
-    public void Born()
+    public void OnEnable()
     {
+        float ran;
         for (int i = 0; i < zombies.Length; i++)
         {
-            zombies[i].Born();
+            ran = Random.Range(0f, 3f);
+            if(ran < 1) 
+                zombies[i].Born();
+            else if(ran<2)
+                zombies[i].PlayIdel();
+            else
+                zombies[i].PlayWalk();
         }
     }
 
