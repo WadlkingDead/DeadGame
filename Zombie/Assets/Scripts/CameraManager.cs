@@ -95,7 +95,7 @@ public class CameraManager : SingletonMonoBehaviour<CameraManager> {
         }
     }
 
-    public Camera cam {
+    public Camera main {
         get {
             if (USE3D)
                 return leftEye;
@@ -212,6 +212,15 @@ public class CameraManagerEditor : Editor {
         manager = target as CameraManager;
     }
 
+    GameObject _city;
+    GameObject city {
+        get {
+            if (!_city)
+                _city = GameObject.Find("_City");
+            return _city;
+        }
+    }
+
     public override void OnInspectorGUI()
     {
         manager.USE3D = EditorGUILayout.Toggle("开启3D", manager.USE3D);
@@ -219,6 +228,15 @@ public class CameraManagerEditor : Editor {
 
         manager.beDarkingDuration = EditorGUILayout.FloatField("变黑时长", manager.beDarkingDuration);
         manager.isDark = EditorGUILayout.Toggle("黑屏", manager.isDark);
+        if (city)
+        {
+            bool enabled = city.hideFlags != HideFlags.HideInHierarchy;
+            enabled = EditorGUILayout.Toggle("显示City", enabled);
+            if (enabled)
+                city.hideFlags = HideFlags.None;
+            else
+                city.hideFlags = HideFlags.HideInHierarchy;
+        }
     }
 
 
