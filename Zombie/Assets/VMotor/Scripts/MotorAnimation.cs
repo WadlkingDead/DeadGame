@@ -27,6 +27,8 @@ public class MotorAnimation : MonoBehaviour
 
     public float RestTime = 5;
 
+    Animation playerAnim;
+
     void Start()
     {
 
@@ -34,8 +36,11 @@ public class MotorAnimation : MonoBehaviour
         myRotation = player.localRotation;
         bikeScript = transform.GetComponent<MotorControl>();
         playerRoot.gameObject.SetActive(false);
+
+        playerAnim = player.GetComponent<Animation>();
     }
 
+    public bool canFall = false;
 
     void FixedUpdate()
     {
@@ -64,7 +69,7 @@ public class MotorAnimation : MonoBehaviour
         RaycastHit hit;
 
 
-        if (Physics.Raycast(eventPoint.position, dir, out hit, 1.0f) && GetComponent<MotorControl>().speed > 50)
+        if (canFall && Physics.Raycast(eventPoint.position, dir, out hit, 1.0f) && GetComponent<MotorControl>().speed > 50)
         {
             if (player.parent != null)
             {
@@ -77,7 +82,7 @@ public class MotorAnimation : MonoBehaviour
             }
 
             transform.root.GetComponent<MotorControl>().crash = true;
-            player.GetComponent<Animation>().enabled = false;
+            playerAnim.enabled = false;
             playerRoot.gameObject.SetActive(true);
             playerRoot.GetComponent<Rigidbody>().AddRelativeForce(0, 0, 5000);
             timer = RestTime;
@@ -88,7 +93,7 @@ public class MotorAnimation : MonoBehaviour
         if (timer == 0.0f)
         {
 
-            player.GetComponent<Animation>().enabled = true;
+            playerAnim.enabled = true;
             playerRoot.gameObject.SetActive(false);
 
             player.parent = transform;
@@ -136,28 +141,28 @@ public class MotorAnimation : MonoBehaviour
                         if (steer > 0)
                         {
 
-                            player.GetComponent<Animation>().CrossFade(animations.right.name, 0.5f);
+                            playerAnim.CrossFade(animations.right.name, 0.5f);
 
                         }
                         else if (steer < 0)
                         {
-                            player.GetComponent<Animation>().CrossFade(animations.left.name, 0.5f);
+                            playerAnim.CrossFade(animations.left.name, 0.5f);
                         }
                         else
                         {
-                            player.GetComponent<Animation>().CrossFade(animations.ride.name, 0.5f);
+                            playerAnim.CrossFade(animations.ride.name, 0.5f);
                         }
 
                     }
                     else
                     {
-                        player.GetComponent<Animation>().CrossFade(animations.jump.name, 0.5f);
+                        playerAnim.CrossFade(animations.jump.name, 0.5f);
                     }
 
                 }
                 else
                 {
-                    player.GetComponent<Animation>().CrossFade(animations.ride.name, 0.5f);
+                    playerAnim.CrossFade(animations.ride.name, 0.5f);
                 }
 
             }
@@ -168,7 +173,7 @@ public class MotorAnimation : MonoBehaviour
                 {
 
 
-                    player.GetComponent<Animation>().CrossFade(animations.back.name, 0.5f);
+                    playerAnim.CrossFade(animations.back.name, 0.5f);
 
 
                 }
@@ -186,7 +191,7 @@ public class MotorAnimation : MonoBehaviour
         else
         {
 
-            player.GetComponent<Animation>().CrossFade(animations.stand.name, 0.5f);
+            playerAnim.CrossFade(animations.stand.name, 0.5f);
 
         }
 
