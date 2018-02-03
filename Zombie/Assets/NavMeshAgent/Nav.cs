@@ -34,11 +34,14 @@ public class Nav : MonoBehaviour {
             /*Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
                 SetDestination(hit.point);*/
-            Born();
+            SelfBorn();
    
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayWalk();
             FindCar();
+        }
         /* if (agent.enabled)
          {
              if (agent.remainingDistance != 0 && agent.remainingDistance <= 0.1f)
@@ -63,16 +66,29 @@ public class Nav : MonoBehaviour {
                 SelfBorn();
             }
         }
+        
+
+        if (isBorn)
+        {
+            //出生了  并且动画播放完毕
+            AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
+            //播完动画 并且是idel 状态 
+            if (info.normalizedTime >= 1.0f && info.IsName("on_all_four_B"))
+            {
+                PlayWalk();
+                FindCar();
+            }
+         
+        }
 
     }
     void SetDestination(Vector3 pos)
     {
         Debug.Log("SetDestination  =====   ");
-        agent.enabled = true;        
-        anim.SetFloat(moveSpeedID, 0.5f);
+        agent.enabled = true;                
         agent.SetDestination(pos);
         agent.angularSpeed = 35f;
-        agent.speed = 0.3f;
+        agent.speed = 0.6f;
     }
 
     public void Born()
@@ -87,8 +103,7 @@ public class Nav : MonoBehaviour {
     void SelfBorn()
     {
         anim.SetFloat(moveSpeedID, -2);
-        isBorn = true;
-        Invoke("FindCar", 2f);
+        isBorn = true;       
     }
 
 
