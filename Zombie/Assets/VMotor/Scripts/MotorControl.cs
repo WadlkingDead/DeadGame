@@ -101,6 +101,8 @@ public class MotorControl : MonoBehaviour
     public bool crash;
     private bool shifmotor;
 
+    float mRPM = 0;
+
 
     // every wheel has a wheeldata struct, contains useful wheel specific info
     class WheelData
@@ -142,7 +144,7 @@ public class MotorControl : MonoBehaviour
         wheel.transform.gameObject.AddComponent<WheelCollider>();
         WheelCollider col = (WheelCollider)go.AddComponent(typeof(WheelCollider));
         col.transform.localScale = wheel.transform.localScale;
-        col.radius = wheel.transform.GetComponent<WheelCollider>().radius;
+        col.radius = 0.33f;
         Destroy(wheel.transform.GetComponent<WheelCollider>());
 
         col.motorTorque = 0.0f;
@@ -161,7 +163,7 @@ public class MotorControl : MonoBehaviour
 
     // Use this for initialization
     Vector3 steerRot;
-
+    Rigidbody rig;
 
     void Start()
     {
@@ -226,7 +228,9 @@ public class MotorControl : MonoBehaviour
         {
             Debug.Log("No audio source, add one to the motor with looping engine noise (but can be turned off");
         }
+        rig = GetComponent<Rigidbody>();
 
+        tempPos = transform.position;
     }
 
 
@@ -237,7 +241,7 @@ public class MotorControl : MonoBehaviour
 
 
 
-        speed = GetComponent<Rigidbody>().velocity.magnitude * 3.6f;
+        speed = rig.velocity.magnitude * 3.6f;
 
 
         if (Input.GetKeyDown("page up"))
@@ -248,9 +252,11 @@ public class MotorControl : MonoBehaviour
         {
             ShiftDown();
         }
+
+        
     }
 
-
+    Vector3 tempPos;
 
 
     // handle shifting a gear up
@@ -302,15 +308,15 @@ public class MotorControl : MonoBehaviour
 
 
 
-
+	public float accel;
     
     void FixedUpdate()
     {
-
+        mRPM = Vector3.Distance(transform.position, tempPos) * 1000;
 
 
         float delta = Time.fixedDeltaTime;
-        GetComponent<Rigidbody>().centerOfMass = shiftCentre;
+        rig.centerOfMass = shiftCentre;
 
 
 
@@ -319,7 +325,7 @@ public class MotorControl : MonoBehaviour
 
 
         float steer = 0; // steering -1.0 .. 1.0
-        float accel = 0.0f; // accelerating -1.0 .. 1.0
+        //float accel = 0.0f; // accelerating -1.0 .. 1.0
         bool brake = false; // braking (true is brake)
 
 
@@ -331,12 +337,12 @@ public class MotorControl : MonoBehaviour
 
         if (gameObject.activeSelf&&!crash)
         {
-            if ((checkForActive == null) || checkForActive.activeSelf)
+            if ((checkForActive == null) || checkForActive.gameObject.activeSelf)
             {
                 // we only look at input when the object we monitor is
                 // active (or we aren't monitoring an object).
                 steer = Input.GetAxis("Horizontal");
-                accel = Input.GetAxis("Vertical");
+                //accel = Input.GetAxis("Vertical");
                 brake = Input.GetButton("Jump");
             }
 
@@ -571,7 +577,7 @@ public class MotorControl : MonoBehaviour
             // calculate the local rotation of the wheels from the delta time and rpm
             // then set the local rotation accordingly (also adjust for steering)
 
-            w.rotation = Mathf.Repeat(w.rotation + delta * col.rpm * 360.0f / 60.0f, 360.0f);
+            w.rotation = Mathf.Repeat(w.rotation + delta * mRPM * 360.0f / 60.0f, 360.0f);
             // w.transform.localRotation = Quaternion.Euler(w.rotation, col.steerAngle, 0.0f);
             w.transform.localRotation = Quaternion.Euler(w.rotation, 0.0f, 0.0f);
 
@@ -628,25 +634,25 @@ public class MotorControl : MonoBehaviour
 
                 if (!crash)
                 {
-                    GetComponent<Rigidbody>().angularDrag = 10.0f;
+                    rig.angularDrag = 10.0f;
                 }
                 else
                 {
-                    GetComponent<Rigidbody>().angularDrag = 0.0f;
+                    rig.angularDrag = 0.0f;
 
 
                 }
                 groundHit = true;
 
-
+                rig.AddRelativeTorque(Vector3.forward, ForceMode.Force);
             }
             else
             {
                 groundHit = false;
 
-                GetComponent<Rigidbody>().angularDrag = 0.0f;
+                rig.angularDrag = 0.0f;
 
-                GetComponent<Rigidbody>().AddForce(0, -1000, 0);
+                rig.AddForce(0, -1000, 0);
                
 
                 if (Particle[3] != null)
@@ -749,7 +755,7 @@ public class MotorControl : MonoBehaviour
             shiftCentre = Vector3.zero;
         }
 
-
+        tempPos = transform.position;
     }
 
 
