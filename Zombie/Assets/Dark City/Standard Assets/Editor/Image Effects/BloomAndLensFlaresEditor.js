@@ -1,4 +1,4 @@
-
+/*
 #pragma strict
 
 @CustomEditor (BloomAndLensFlares)
@@ -153,3 +153,4 @@ class BloomAndLensFlaresEditor extends Editor
     	serObj.ApplyModifiedProperties();
     }
 }
+*/

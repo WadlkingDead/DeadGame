@@ -1,4 +1,4 @@
-
+/*
 #pragma strict
 
 @CustomEditor (Tonemapping)
@@ -75,3 +75,4 @@ class TonemappingEditor extends Editor
     	serObj.ApplyModifiedProperties();
     }
 }
+*/

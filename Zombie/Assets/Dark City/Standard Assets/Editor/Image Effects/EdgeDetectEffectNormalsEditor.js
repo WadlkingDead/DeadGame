@@ -1,4 +1,4 @@
-
+/*
 @script ExecuteInEditMode()
 
 @CustomEditor (EdgeDetectEffectNormals)
@@ -46,3 +46,4 @@ class EdgeDetectEffectNormalsEditor extends Editor
     	serObj.ApplyModifiedProperties();
     }
 }
+*/

@@ -1,4 +1,4 @@
-
+/*
 #pragma strict
 
 @CustomEditor (SunShafts)
@@ -52,15 +52,15 @@ class SunShaftsEditor extends Editor
     	EditorGUILayout.EndHorizontal();
 		
 		// depth buffer need
-		/*
-		var newVal : boolean = useDepthTexture.boolValue;
-		if (newVal != oldVal) {
-			if(newVal)
-				(target as SunShafts).camera.depthTextureMode |= DepthTextureMode.Depth;
-			else
-				(target as SunShafts).camera.depthTextureMode &= ~DepthTextureMode.Depth;
-		}
-		*/
+		
+		//var newVal : boolean = useDepthTexture.boolValue;
+		//if (newVal != oldVal) {
+		//	if(newVal)
+		//		(target as SunShafts).camera.depthTextureMode |= DepthTextureMode.Depth;
+		//	else
+		//		(target as SunShafts).camera.depthTextureMode &= ~DepthTextureMode.Depth;
+		//}
+		
 		
     	EditorGUILayout.PropertyField (resolution,  new GUIContent("Resolution"));
      	EditorGUILayout.PropertyField (screenBlendMode, new GUIContent("Blend mode"));
@@ -100,3 +100,4 @@ class SunShaftsEditor extends Editor
     	serObj.ApplyModifiedProperties();
     }
 }
+*/

@@ -1,4 +1,4 @@
-
+/*
 #pragma strict
 
 @CustomEditor (ColorCorrectionCurves)
@@ -132,3 +132,4 @@ class ColorCorrectionCurvesEditor extends Editor {
 			serObj.ApplyModifiedProperties ();         
     }
 }
+*/
