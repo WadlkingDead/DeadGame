@@ -5,3 +5,4 @@ Zombie.CSharp.Editor.Plugins.csproj
 Zombie.CSharp.Plugins.csproj
 Zombie.sln
 UnityPackageManager
+NavMeshAgent
